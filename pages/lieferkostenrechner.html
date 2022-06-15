@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Lieferkostenkalkulationen</title>
-    <script src="../scripts/lieferkostenrechner.js"></script>
     <link rel="stylesheet" href="../style/lieferkostenrechner.css">
     <meta name="author" content="Andrej">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="../scripts/lieferkostenrechner.js"></script>
 </head>
 <body>
 <form>
@@ -18,14 +18,14 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <p>Warenwert:</p>
+                <label for="betrag">Warenwert:</label>
                 <div class="input-group flex-nowrap">
-                    <input type="text" class="form-control" placeholder="Warenwert in Euro eingeben!" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input id="betrag" type="number" class="form-control" placeholder="Warenwert in Euro eingeben!" aria-label="Username" aria-describedby="addon-wrapping">
                 </div>
                 <p></p>
-                <p>Postleitzahlengebiet-Auswahl:</p>
+                <label for="PLZ">Postleitzahlengebiet-Auswahl:</label>
                 <div>
-                <select class="form-select" aria-label="Default select example">
+                <select id="PLZ" class="form-select" aria-label="Default select example">
                     <option selected>PLZ-Gebiet:</option>
                     <option value="1">1:</option>
                     <option value="2">2:</option>
@@ -56,10 +56,11 @@
         </div>
     </div>
     <div>
-        <button>Kosten berechnen</button>
+        <button type="button" onclick="lkRechnung">Kosten berechnen</button>
     </div>
     <div>
-        <output>ermittelte Lieferkosten in Euro:</output>
+        <label for="ergebnis">ermittelte Lieferkosten in Euro:</label>
+        <output id="ergebnis"></output>
     </div>
 </form>
 </body>
